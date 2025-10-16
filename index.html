@@ -24,6 +24,7 @@
             <input type="radio" name="profession" value="ranger"> Ranger
             <input type="radio" name="profession" value="rogue"> Rogue
             <input type="radio" name="profession" value="mage"> Mage
+            <span id="professionError" class="error-message"></span>
         </fieldset>
 
         <!-- Talent (multiple select) -->
@@ -33,11 +34,12 @@
             <input type="checkbox" name="talent" value="intelligence"> Intelligence
             <input type="checkbox" name="talent" value="agility"> Agility
             <input type="checkbox" name="talent" value="rich"> Rich
+            <span id="talentError" class="error-message"></span>
         </fieldset>
 
         <!-- City dropdown -->
         <fieldset>
-            <legend>Choose the city</legend>
+            <legend>Choose a city as your hometown</legend>
             <select id="eventType" name="eventType">
                 <option value=""></option>
                 <option value="lion">Casterly Rock</option>
@@ -48,7 +50,7 @@
             <span id="cityError" class="error-message"></span>
         </fieldset>
 
-        <button type="submit">Register</button>
+        <button type="submit" id="button">Register</button>
     </div>
     <script src="script.js"></script>
 </body>
