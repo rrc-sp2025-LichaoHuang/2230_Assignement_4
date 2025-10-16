@@ -4,9 +4,9 @@ Lichao Huang
 Assignment 4
 */
 
-/* ------------------------ Name Validation ------------------------ */
+/* ------------------------ Name input(use regex) ------------------------ */
 const nameInput = document.getElementById("name");
-const nameError = document.getElementById("ticketsError");
+const nameError = document.getElementById("nameError");
 
 function validateName() {
     const value = nameInput.value.trim();
@@ -15,6 +15,7 @@ function validateName() {
         return false;
     }
 
+    // regex validation
     const regexName = /^[A-Za-z\s-]+$/;
 
         if (!regexName.test(value)) {
@@ -70,6 +71,55 @@ function validateCity() {
     return true;
 }
 
+/* ------------------------ age input(use regex) ------------------------ */
+const ageInput = document.getElementById("age");
+const ageError = document.getElementById("ageError");
+
+function validateAge() {
+    const value = ageInput.value.trim();
+
+    if (value === "") {
+        ageError.textContent = "Age cannot be empty.";
+        return false;
+    }
+
+    // regex validation
+    const regexAge = /^[1-9]\d*$/;
+    if (!regexAge.test(value)) {
+        ageError.textContent = "Age must be a positive number.";
+        return false;
+    }
+
+    ageError.textContent = "";
+    return true;
+}
+
+
+/* ------------------------ email input(use regex) ------------------------ */
+const emailInput = document.getElementById("email");
+const emailError = document.getElementById("emailError");
+
+
+function validateEmail() {
+    const value = emailInput.value.trim();
+
+    if (value === "") {
+        emailError.textContent = "Email cannot be empty.";
+        return false;
+    }
+
+    // regex validation
+    const complexEmailPattern = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+    if (!complexEmailPattern.test(value)) {
+        emailError.textContent = "Please enter a valid email address.";
+        return false;
+    }
+
+    emailError.textContent = "";
+    return true;
+}
+
+
 /* ------------------------ Button ------------------------ */
 const submitButton = document.getElementById("button");
 
@@ -80,8 +130,10 @@ submitButton.addEventListener('click', function(event) {
     const professionValid = validateProfession();
     const talentValid = validateTalent();
     const cityValid = validateCity();
+    const ageValid = validateAge();
+    const emailValid = validateEmail();
 
-    if (nameValid && professionValid && talentValid && cityValid) {
+    if (nameValid && professionValid && talentValid && cityValid && ageValid && emailValid) {
         alert("Character created successfully!");
     }
 });
