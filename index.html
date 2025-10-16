@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design a character</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div id="Box">
+        <h1>Design a character for your adventure.</h1>
+        
+        <!-- Name Input -->
+        <label for="name"></label>
+        <input type="text" id="name" name="name" placeholder="Enter Your Name">
+        <span id="ticketsError" class="error-message"></span>
+
+        <!-- select profession(single select)-->
+        <h2>Profession</h2>
+        <input type="radio" name="profession" value="warrior"> Warrior
+        <input type="radio" name="profession" value="ranger"> Ranger
+        <input type="radio" name="profession" value="rogue"> Rogue
+        <input type="radio" name="profession" value="mage"> Mage
+
+        <!-- select talent(multiple select) -->
+        <h2>Select talent</h2>
+        <input type="checkbox" name="talent" value="strength"> Strength
+        <input type="checkbox" name="talent" value="intelligence"> Intelligence
+        <input type="checkbox" name="talent" value="agility"> Agility
+        <input type="checkbox" name="talent" value="rich"> Rich
+
+        <!-- Select city(dropdown menu)-->
+        <h2>Choose the city where your adventure begins</h2>
+        <label for="eventType">Event Type:</label>
+        <select id="eventType" name="eventType" placeholder="Select an city">
+            <option value=""></option>
+            <option value="lion">Casterly Rock</option>
+            <option value="wolf">Winterfell</option>
+            <option value="rose">Highgarden</option>
+            <option value="king">King's Landing</option>
+        </select>
+        <span id="cityError" class="error-message"></span>
+
+        <button type="submit">Register</button>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
