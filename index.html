@@ -8,43 +8,48 @@
 </head>
 <body>
     <div id="Box">
-        <h1>Design a character for your adventure.</h1>
+        <h1>Design a character for your adventure</h1>
         
         <!-- Name Input -->
-        <label for="name"></label>
-        <input type="text" id="name" name="name" placeholder="Enter Your Name">
-        <span id="ticketsError" class="error-message"></span>
+        <fieldset>
+            <legend>Name</legend>
+            <input type="text" id="name" name="name" placeholder="Enter Your Name">
+            <span id="ticketsError" class="error-message"></span>
+        </fieldset>
 
-        <!-- select profession(single select)-->
-        <h2>Profession</h2>
-        <input type="radio" name="profession" value="warrior"> Warrior
-        <input type="radio" name="profession" value="ranger"> Ranger
-        <input type="radio" name="profession" value="rogue"> Rogue
-        <input type="radio" name="profession" value="mage"> Mage
+        <!-- Profession (single select) -->
+        <fieldset>
+            <legend>Profession</legend>
+            <input type="radio" name="profession" value="warrior"> Warrior
+            <input type="radio" name="profession" value="ranger"> Ranger
+            <input type="radio" name="profession" value="rogue"> Rogue
+            <input type="radio" name="profession" value="mage"> Mage
+        </fieldset>
 
-        <!-- select talent(multiple select) -->
-        <h2>Select talent</h2>
-        <input type="checkbox" name="talent" value="strength"> Strength
-        <input type="checkbox" name="talent" value="intelligence"> Intelligence
-        <input type="checkbox" name="talent" value="agility"> Agility
-        <input type="checkbox" name="talent" value="rich"> Rich
+        <!-- Talent (multiple select) -->
+        <fieldset>
+            <legend>Select Talent</legend>
+            <input type="checkbox" name="talent" value="strength"> Strength
+            <input type="checkbox" name="talent" value="intelligence"> Intelligence
+            <input type="checkbox" name="talent" value="agility"> Agility
+            <input type="checkbox" name="talent" value="rich"> Rich
+        </fieldset>
 
-        <!-- Select city(dropdown menu)-->
-        <h2>Choose the city where your adventure begins</h2>
-        <label for="eventType">Event Type:</label>
-        <select id="eventType" name="eventType" placeholder="Select an city">
-            <option value=""></option>
-            <option value="lion">Casterly Rock</option>
-            <option value="wolf">Winterfell</option>
-            <option value="rose">Highgarden</option>
-            <option value="king">King's Landing</option>
-        </select>
-        <span id="cityError" class="error-message"></span>
+        <!-- City dropdown -->
+        <fieldset>
+            <legend>Choose the city</legend>
+            <select id="eventType" name="eventType">
+                <option value=""></option>
+                <option value="lion">Casterly Rock</option>
+                <option value="wolf">Winterfell</option>
+                <option value="rose">Highgarden</option>
+                <option value="king">King's Landing</option>
+            </select>
+            <span id="cityError" class="error-message"></span>
+        </fieldset>
 
         <button type="submit">Register</button>
     </div>
-
-
     <script src="script.js"></script>
 </body>
 </html>
