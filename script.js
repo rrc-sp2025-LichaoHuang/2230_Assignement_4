@@ -61,5 +61,14 @@ function validateTalent() {
 const citySelect = document.getElementById("eventType");
 const cityError = document.getElementById("cityError");
 
+function validateCity() {
+    if (citySelect.value === "") {
+        cityError.textContent = "Please select a city.";
+        return false;
+    }
+    cityError.textContent = "";
+    return true;
+}
+
 /* ------------------------ Button ------------------------ */
 const submitButton = document.getElementById("button");
