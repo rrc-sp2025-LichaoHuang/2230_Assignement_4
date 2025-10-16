@@ -14,6 +14,15 @@ function validateName() {
         nameError.textContent = "Name cannot be empty.";
         return false;
     }
+
+    const regexName = /^[A-Za-z\s-]+$/;
+
+        if (!regexName.test(value)) {
+        nameError.textContent = "Name can only contain letters, space and hyphen.";
+        return false;
+    }
+
+
     nameError.textContent = "";
     return true;
 }
@@ -22,9 +31,31 @@ function validateName() {
 const professionInputs = document.getElementsByName("profession");
 const professionError = document.getElementById("professionError");
 
+function validateProfession() {
+    for (let input of professionInputs) {
+        if (input.checked) {
+            professionError.textContent = "";
+            return true;
+        }
+    }
+    professionError.textContent = "Please select a profession.";
+    return false;
+}
+
 /* ------------------------ Talent Validation ------------------------ */
 const talentInputs = document.getElementsByName("talent");
 const talentError = document.getElementById("talentError");
+
+function validateTalent() {
+    for (let input of talentInputs) {
+        if (input.checked) {
+            talentError.textContent = "";
+            return true;
+        }
+    }
+    talentError.textContent = "Please select at least one talent.";
+    return false;
+}
 
 /* ------------------------ City Validation ------------------------ */
 const citySelect = document.getElementById("eventType");
