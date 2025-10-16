@@ -72,3 +72,16 @@ function validateCity() {
 
 /* ------------------------ Button ------------------------ */
 const submitButton = document.getElementById("button");
+
+submitButton.addEventListener('click', function(event) {
+    event.preventDefault();
+
+    const nameValid = validateName();
+    const professionValid = validateProfession();
+    const talentValid = validateTalent();
+    const cityValid = validateCity();
+
+    if (nameValid && professionValid && talentValid && cityValid) {
+        alert("Character created successfully!");
+    }
+});
