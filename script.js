@@ -135,5 +135,6 @@ form.addEventListener('submit', function(event) {
 
     if (nameValid && professionValid && talentValid && cityValid && ageValid && emailValid) {
         alert("Character created successfully!");
+        form.submit();
     }
 });
