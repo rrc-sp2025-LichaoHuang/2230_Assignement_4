@@ -121,10 +121,10 @@ function validateEmail() {
 
 
 /* ------------------------ Button ------------------------ */
-const form = document.getElementById("characterForm"); // MODIFIED
+const form = document.getElementById("characterForm");
 
-form.addEventListener('submit', function(event) { // MODIFIED
-    event.preventDefault(); // MODIFIED
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
 
     const nameValid = validateName();
     const professionValid = validateProfession();
