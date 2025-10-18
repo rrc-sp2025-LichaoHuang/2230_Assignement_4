@@ -15,7 +15,7 @@ function validateName() {
         return false;
     }
 
-    // regex validation
+    // regex validation(only letter, space and hyphen)
     const regexName = /^[A-Za-z\s-]+$/;
 
         if (!regexName.test(value)) {
@@ -83,7 +83,7 @@ function validateAge() {
         return false;
     }
 
-    // regex validation
+    // regex validation(positive and numeric)
     const regexAge = /^[1-9]\d*$/;
     if (!regexAge.test(value)) {
         ageError.textContent = "Age must be a positive number.";
@@ -108,7 +108,7 @@ function validateEmail() {
         return false;
     }
 
-    // regex validation
+    // regex validation(email format)
     const complexEmailPattern = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
     if (!complexEmailPattern.test(value)) {
         emailError.textContent = "Please enter a valid email address.";
@@ -121,10 +121,10 @@ function validateEmail() {
 
 
 /* ------------------------ Button ------------------------ */
-const submitButton = document.getElementById("button");
+const form = document.getElementById("characterForm"); // MODIFIED
 
-submitButton.addEventListener('click', function(event) {
-    event.preventDefault();
+form.addEventListener('submit', function(event) { // MODIFIED
+    event.preventDefault(); // MODIFIED
 
     const nameValid = validateName();
     const professionValid = validateProfession();
