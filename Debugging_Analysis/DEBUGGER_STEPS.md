@@ -1,58 +1,57 @@
-Debugging Analysis — Assignment 4
+# Debugging Analysis — Assignment 4
 
-Name: Lichao Huang
-Date: 10/17/2025
+**Name:** Lichao Huang  
+**Date:** 10/17/2025  
 
-Breakpoint 1 — Submit a blank name
+---
 
-    Location: Line 13"if (value === "")"
-    Purpose: Check if input is empty.
+## Breakpoint 1 — Submit a blank name
 
-    Screenshots:
+**Location:** Line 13: `if (value === "")`  
+**Purpose:** Check behavior when the name input is empty.  
 
-    breakpoint1_before.png: Check button when input is empty.
+**Screenshots:**  
+- `breakpoint1_before.png`: Form ready to submit with empty name input.  
+- `breakpoint1_after.png`: `validateName` returns false.  
 
-    breakpoint1_after.png: validateName return false.
+**Observation:**  
+A warning appears stating "Name cannot be empty," and the form is not submitted.
 
-    Observation: A warning pops up that the name cannot be empty and the form is not submitted.
+---
 
-    
+## Breakpoint 2 — Submit a valid name
 
-Breakpoint 2 — Submit valid name
+**Location:** Line 13: `if (value === "")`  
+**Purpose:** Ensure that valid input passes validation.  
 
-    Location: Line 13"if (value === "")"
-    Purpose: Ensure that qualified input will be passed.
+**Screenshots:**  
+- `breakpoint2_before.png`: Form ready to submit with a valid name.  
+- `breakpoint2_after.png`: `validateName` returns true.  
 
-    Screenshots:
+**Observation:**  
+No warning appears, and the form validation for name succeeds.
 
-    breakpoint2_before.png: Check button when input is valid.
+---
 
-    breakpoint2_after.png: validateName return true.
+## Breakpoint 3 — Check talent selection
 
-    Observation: No warning pops up.
+**Location:** Line 51: `for (let input of talentInputs)`  
+**Purpose:** Verify that the multiselect loop for talents works correctly.  
 
-    
+**Screenshots:**  
+- `breakpoint3_before.png`: Loop starts checking each talent option.  
+- `breakpoint3_after.png`: No option selected, loop returns false.  
 
-Breakpoint 3 — Confirm that the name is qualified when clicking the submit button
+**Observation:**  
+A warning appears stating "Please select at least one talent," and form submission is prevented.
 
-    Location: line 51 "for (let input of talentInputs)"
-    Purpose: Check if the multiselect check loop is working correctly.
+---
 
-    Screenshots:
-
-    breakpoint3_before.png: The loop will check if each option is selected.
-
-    breakpoint3_after.png: There is no option is selected, return false.
-
-    Observation: A warning pops up that Please select at least one talent.
-
-
-
-Files included in this analysis folder
-     `breakpoint_1_before.png`
-     `breakpoint_1_after.png`
-     `breakpoint_2_before.png`
-     `breakpoint_2_after.png`
-     `breakpoint_3_before.png`
-     `breakpoint_3_after.png`
-     `DEBUGGER_STEPS.md`
+**Files included in this analysis folder:**  
+- `breakpoint_1_before.png`  
+- `breakpoint_1_after.png`  
+- `breakpoint_2_before.png`  
+- `breakpoint_2_after.png`  
+- `breakpoint_3_before.png`  
+- `breakpoint_3_after.png`  
+- `DEBUGGER_STEPS.md` 
