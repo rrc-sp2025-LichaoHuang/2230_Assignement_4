@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design a character</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div id="Box">
+        <h1>Design a character for your adventure</h1>
+
+        <form id="characterForm" action="https://httpbin.org/post" method="post">
+
+            <!-- Name Input -->
+            <fieldset>
+                <legend>Name</legend>
+                <input type="text" id="name" name="name" placeholder="Enter Your Name" aria-label="Enter your name">
+                <span id="nameError" class="error-message"></span>
+            </fieldset>
+
+            <!-- Profession (single select) -->
+            <fieldset>
+                <legend>Profession</legend>
+                <label><input type="radio" name="profession" value="warrior"> Warrior</label>
+                <label><input type="radio" name="profession" value="ranger"> Ranger</label>
+                <label><input type="radio" name="profession" value="rogue"> Rogue</label>
+                <label><input type="radio" name="profession" value="mage"> Mage</label>
+                <span id="professionError" class="error-message"></span>
+            </fieldset>
+
+            <!-- Talent (multiple select) -->
+            <fieldset>
+                <legend>Select Talent</legend>
+                <label><input type="checkbox" name="talent" value="strength"> Strength</label>
+                <label><input type="checkbox" name="talent" value="intelligence"> Intelligence</label>
+                <label><input type="checkbox" name="talent" value="agility"> Agility</label>
+                <label><input type="checkbox" name="talent" value="rich"> Rich</label>
+                <span id="talentError" class="error-message"></span>
+            </fieldset>
+
+            <!-- City dropdown -->
+            <fieldset>
+                <legend>Choose a city as your hometown</legend>
+                <select id="eventType" name="eventType">
+                    <option value="">--choose a city--</option>
+                    <option value="lion">Casterly Rock</option>
+                    <option value="wolf">Winterfell</option>
+                    <option value="rose">Highgarden</option>
+                    <option value="king">King's Landing</option>
+                </select>
+                <span id="cityError" class="error-message"></span>
+            </fieldset>
+
+            <!-- Age Input -->
+            <fieldset>
+                <legend>Age</legend>
+                <input type="text" id="age" name="age" placeholder="Enter Your Age" aria-label="Enter your age">
+                <span id="ageError" class="error-message"></span>
+            </fieldset>
+
+
+            <!-- Email Input -->
+            <fieldset>
+                <legend>Email</legend>
+                <input type="text" id="email" name="email" placeholder="Enter Your Email" aria-label="Enter your email">
+                <span id="emailError" class="error-message"></span>
+            </fieldset>
+
+            <button type="submit" id="button">Register</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
